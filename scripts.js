@@ -5,7 +5,7 @@ var data = [
 ];
 
 function download_csv() {
-    var csv = 'Name,Title\n';
+    var csv = 'あ,日\n';
     data.forEach(function(row) {
             csv += row.join(',');
             csv += "\n";
@@ -13,7 +13,7 @@ function download_csv() {
     
     //console.log(csv);
     var hiddenElement = document.createElement('a');
-    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+    hiddenElement.href = 'data:text/csv;charset=utf-8,%EF%BB%BF' + encodeURIComponent(csv);
     hiddenElement.target = '_blank';
     hiddenElement.download = 'people.csv';
 
