@@ -5,3 +5,4 @@ This repository contains source code for exporting CSV by Javascript
 - https://stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side
 - https://ourcodeworld.com/articles/read/189/how-to-create-a-file-and-generate-a-download-with-javascript-in-the-browser-without-a-server
 - https://stackoverflow.com/questions/19492846/javascript-to-csv-export-encoding-issue
+- https://stackoverflow.com/questions/17879198/adding-utf-8-bom-to-string-blob

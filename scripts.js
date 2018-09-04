@@ -12,13 +12,25 @@ function download_csv() {
     });
     
     //console.log(csv);
-    var hiddenElement = document.createElement('a');
-    hiddenElement.href = 'data:text/csv;charset=utf-8,%EF%BB%BF' + encodeURIComponent(csv);
-    hiddenElement.target = '_blank';
-    hiddenElement.download = 'people.csv';
+    // var hiddenElement = document.createElement('a');
+    // hiddenElement.href = 'data:text/csv;charset=utf-8,%EF%BB%BF' + encodeURIComponent(csv);
+    // hiddenElement.target = '_blank';
+    // hiddenElement.download = 'people.csv';
+
+    // // Required for Mozilla Firefox
+    // document.body.appendChild(hiddenElement);
+    // hiddenElement.click();
+    // document.body.removeChild(hiddenElement);
+
+    var blob = new Blob([new Uint8Array([0xEF, 0xBB, 0xBF]), csv], {type: 'text/csv'});
+    var url = (window.URL || window.webkitURL);
+    var href = url.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = href;
+    a.download = 'people.csv';
 
     // Required for Mozilla Firefox
-    document.body.appendChild(hiddenElement);
-    hiddenElement.click();
-    document.body.removeChild(hiddenElement);
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
 }
