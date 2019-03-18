@@ -5,7 +5,7 @@ var data = [
 ];
 
 function download_csv() {
-    var csv = 'あ,日\n';
+    var csv = '名前,ジョブ\n';
     data.forEach(function(row) {
             csv += row.join(',');
             csv += "\n";
@@ -22,7 +22,7 @@ function download_csv() {
     // hiddenElement.click();
     // document.body.removeChild(hiddenElement);
 
-    var blob = new Blob([new Uint8Array([0xEF, 0xBB, 0xBF]), csv], {type: 'text/csv'});
+    var blob = new Blob([csv], {type: 'text/csv;charset=utf-8;'});
     var url = (window.URL || window.webkitURL);
     var href = url.createObjectURL(blob);
     var a = document.createElement("a");
